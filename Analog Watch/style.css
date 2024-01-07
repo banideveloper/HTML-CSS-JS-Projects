@@ -3,12 +3,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: white;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
 }
 
 body{
     display: flex;
-    background-color: #212121;
+    background-color: rgb(230,230,230);
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -16,12 +17,12 @@ body{
 }
 
 .clock{
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
+    background-color: rgba(230, 230, 230, 0.1);
+    border: 12px solid rgba(255, 255, 255, 5);
+    box-shadow: 0px 0px 30px rgb(90, 89, 89);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,6 +38,7 @@ body{
     transform: rotate(calc(30deg* var(--i)));
     inset: 12px;
     text-align: center;
+    margin: 10px;
 }
 
 .clock span b{
@@ -54,6 +56,16 @@ body{
     z-index: 2;
 }
 
+.hour-width i{
+    height: 94px;
+}
+.min-width i{
+    height: 104px;
+}
+.sec-width i{
+    height: 114px;
+}
+
 .hand{
     position: absolute;
     display: flex;
@@ -65,12 +77,79 @@ body{
     position: absolute;
     background-color: var(--clr);
     width: 5px;
-    height: var(--h);
     border-radius: 9px;
 }
 
 .digital-clock{
     position: absolute;
+    margin-top: 200px;
     display: flex;
-    margin-top: 20%;
+    cursor: pointer;
+}
+
+.copyright{
+    position: absolute;
+    margin-bottom: 200px;
+    display: flex;
+}
+
+.copyright p{
+    color: rgb(190, 0, 0);
+}
+
+@media (max-width: 480px){
+
+    *{
+        font-size: 12px;
+    }
+
+    .clock{
+        width: 250px;
+        height: 250px;
+    }
+    
+    .digital-clock{
+        margin-top: 100px;
+    }
+    
+    .copyright{
+        margin-bottom: 100px;
+    }
+
+    .hour-width i{
+        height: 50px;
+    }
+    .min-width i{
+        height: 60px;
+    }
+    .sec-width i{
+        height: 70px;
+    }
+
+}
+@media (max-width: 280px){
+
+    *{
+        padding: 0;
+        margin: 0;
+        height: min-content;
+    }
+
+    .clock{
+        visibility: hidden;
+    }
+
+    .copyright{
+        visibility: hidden;
+    }
+
+    .digital-clock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+
+    }
+
 }
